@@ -1,0 +1,9 @@
+Options +FollowSymLinks
+RewriteEngine On
+ 
+RewriteCond %{HTTP_HOST} ^www.daviddaw2.esy.es [NC]
+RewriteRule ^(.*)$ http://daviddaw2.esy.es/$1 [L,R=301]
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^(\w+)$ ./model/redireccion.php?short=$1
